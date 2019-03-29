@@ -109,11 +109,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  let solutionArray = new Array(2);
+  let multiplyValue = 1;
+  for(let i = 0; i < multArr.length; i++) {
+    multiplyValue = multiply(multiplyValue, multArr[i])[0];
+  }
+  solutionArray[0] = multiplyValue;
+  solutionArray[1] = `The numbers ${multArr.toString()} have a product of ${solutionArray[0]}.`;
+  return solutionArray;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
